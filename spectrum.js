@@ -908,6 +908,11 @@
         function destroy() {
             boundElement.show();
             offsetElement.unbind("click.spectrum touchstart.spectrum");
+
+            $(doc).unbind("keydown.spectrum");
+            $(doc).unbind("click.spectrum");
+            $(window).unbind("resize.spectrum");
+
             container.remove();
             replacer.remove();
             spectrums[spect.id] = null;
